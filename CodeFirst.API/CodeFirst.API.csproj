@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CodeFirst.DataPartTwo\CodeFirst.DataPartTwo.csproj" />
     <ProjectReference Include="..\CodeFirt.Data\CodeFirt.Data.csproj" />
   </ItemGroup>
 

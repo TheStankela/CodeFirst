@@ -1,3 +1,4 @@
+using CodeFirst.DataPartTwo;
 using CodeFirt.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -19,7 +20,16 @@ namespace CodeFirst.API
             {
                 options
                 .UseSqlServer(_configuration.GetConnectionString("CollegeConnection"));
-            });
+				
+			});
+			services.AddDbContext<CarContext>(options =>
+			{
+				options
+				.UseSqlServer(_configuration.GetConnectionString("CarsConnection"));
+			});
+
+			services.AddEndpointsApiExplorer();
+			services.AddSwaggerGen();
 
             services.AddControllers();
 
@@ -34,7 +44,9 @@ namespace CodeFirst.API
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-            }
+				app.UseSwagger();
+				app.UseSwaggerUI();
+			}
 
             app.UseHttpsRedirection();
             
