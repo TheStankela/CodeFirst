@@ -1,4 +1,6 @@
 using CodeFirst.DataPartTwo;
+using CodeFirst.DataPartTwo.Interface;
+using CodeFirst.DataPartTwo.Repository;
 using CodeFirt.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -27,6 +29,7 @@ namespace CodeFirst.API
 				options
 				.UseSqlServer(_configuration.GetConnectionString("CarsConnection"));
 			});
+            services.AddScoped<ICarRepository, CarRepository>();
 
 			services.AddEndpointsApiExplorer();
 			services.AddSwaggerGen();
