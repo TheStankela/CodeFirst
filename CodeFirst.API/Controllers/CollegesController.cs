@@ -1,6 +1,11 @@
-﻿namespace CodeFirst.API.Controllers
+﻿using Microsoft.AspNetCore.Mvc;
+
+namespace CodeFirst.API.Controllers
 {
-    public class CollegesController
+    [ApiController]
+    [Route("api/[controller]")]
+    public class CollegesController : ControllerBase
     {
+
     }
 }
