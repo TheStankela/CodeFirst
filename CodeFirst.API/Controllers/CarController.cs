@@ -1,4 +1,5 @@
 ﻿using CodeFirst.DataPartTwo.Interface;
+using CodeFirst.DataPartTwo.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -22,6 +23,11 @@ namespace CodeFirst.API.Controllers
 				return NotFound();
 
 			return Ok(result);
+		}
+		[HttpPost]
+		public IActionResult CreateCar([FromBody] Car car, Engine engine, EngineType engineType)
+		{
+
 		}
     }
 }
