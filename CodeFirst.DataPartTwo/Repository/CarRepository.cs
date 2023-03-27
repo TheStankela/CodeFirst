@@ -21,6 +21,10 @@ namespace CodeFirst.DataPartTwo.Repository
 		{
 			return _carContext.Cars.Include(c => c.Engine).ToList();
 		}
+		public Car? GetCarById(int id)
+		{
+			return _carContext.Cars.FirstOrDefault(c => c.Id == id);
+		}
 
 	}
 }
